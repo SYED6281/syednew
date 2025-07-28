@@ -1,0 +1,22 @@
+
+h1{ 
+    height: 50px;
+    width: 150px;
+    background-color: aqua;
+    /* border-width :2px; 
+     border-color: rosybrown;
+     border-style:solid; */
+     border :brown 2px solid;
+     text-align: center;
+}
+
+div{
+     height: 75px;
+     background-color: rgb(197, 120, 120);
+     width: 95px;
+     border-width :2px; 
+     border-color: darkslategray;
+     border-style:solid;
+     padding:1px 2px 3px 4px;
+}
+

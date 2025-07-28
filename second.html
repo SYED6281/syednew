@@ -8,3 +8,251 @@
 <p>help help</p>
 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio, cupiditate eligendi facilis inventore culpa illo dolorem deleniti aliquid expedita minima accusantium sunt iste nostrum quis porro, laudantium voluptates, quas unde!</p>
 <h2>this is a headding </h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Complete Web Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    nav {
+      background: #444;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+      background: white;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #333;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 15px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+
+    .button:hover {
+      background: #218838;
+    }
+
+    form {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="submit"] {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    input[type="submit"]:hover {
+      background: #0056b3;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background: #f0f0f0;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .container {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to My Web Page</h1>
+    <p>A full HTML and CSS example</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#form">Contact</a>
+    <a href="#table">Data</a>
+  </nav>
+
+  <div class="container">
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>Hello! I am learning web development and this is my test web page. I love coding, designing, and creating projects that help people.</p>
+      <ul>
+        <li>HTML & CSS</li>
+        <li>JavaScript</li>
+        <li>Git & GitHub</li>
+        <li>Responsive Design</li>
+      </ul>
+    </section>
+
+    <section id="gallery" class="section">
+      <h2>Gallery</h2>
+      <p>Here are some sample images:</p>
+      <img src="https://via.placeholder.com/600x300" alt="Sample Image">
+      <img src="https://via.placeholder.com/400x200" alt="Another Image">
+      <a href="#form" class="button">Contact Me</a>
+    </section>
+
+    <section id="form" class="section">
+      <h2>Contact Form</h2>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message..."></textarea>
+
+        <input type="submit" value="Send Message">
+      </form>
+    </section>
+
+    <section id="table" class="section">
+      <h2>My Skills Table</h2>
+      <table>
+        <tr>
+          <th>Skill</th>
+          <th>Level</th>
+          <th>Experience</th>
+        </tr>
+        <tr>
+          <td>HTML</td>
+          <td>Advanced</td>
+          <td>3 years</td>
+        </tr>
+        <tr>
+          <td>CSS</td>
+          <td>Intermediate</td>
+          <td>2 years</td>
+        </tr>
+        <tr>
+          <td>JavaScript</td>
+          <td>Basic</td>
+          <td>1 year</td>
+        </tr>
+      </table>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Syed Rahmath | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>

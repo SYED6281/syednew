@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marwa Education Consultant - Premium Study Abroad & Local Admissions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a0ca3;
+            --secondary: #f72585;
+            --secondary-dark: #b5179e;
+            --accent: #4cc9f0;
+            --accent-dark: #4895ef;
+            --success: #2ec4b6;
+            --info: #560bad;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --yellow: #ffbe0b;
+            --orange: #fb5607;
+            --purple: #8338ec;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--dark);
+            background-color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            padding: 0.5rem 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 45px;
+            margin-right: 12px;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav ul li {
+            margin-left: 1.8rem;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s;
+            padding: 0.5rem 0;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+            border-radius: 3px;
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4);
+        }
+        
+        .btn-accent {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            box-shadow: 0 4px 15px rgba(76, 201, 240, 0.3);
+        }
+        
+        .btn-accent:hover {
+            box-shadow: 0 8px 20px rgba(76, 201, 240, 0.4);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+            box-shadow: 0 4px 15px rgba(247, 37, 133, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            box-shadow: 0 8px 20px rgba(247, 37, 133, 0.4);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, rgba(67,97,238,0.85) 0%, rgba(58,12,163,0.85) 100%), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+            gap: 1.5rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            min-width: 160px;
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: white;
+            background: linear-gradient(135deg, #fff, #e0e0e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+        
+        section {
+            padding: 6rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-subtitle {
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: inline-block;
+            background: rgba(247, 37, 133, 0.1);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        .section-description {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #6c757d;
+            font-size: 1.2rem;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: 2.5rem 2rem;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .service-card:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .service-card:hover:after {
+            height: 100%;
+            opacity: 0.1;
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 10px 20px rgba(67, 97, 238, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: rotateY(180deg);
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+        }
+        
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: var(--dark);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover h3 {
+            color: var(--primary);
+        }
+        
+        .service-card p {
+            color: #6c757d;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover p {
+            color: #495057;
+        }
+        
+        .service-link {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        
+        .service-link i {
+            margin-left: 0.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .service-link:hover {
+            color: var(--primary-dark);
+        }
+        
+        .service-link:hover i {
+            transform: translateX(5px);
+        }
+        
+        .countries {
+            background-color: var(--light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .countries:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://cdn.pixabay.com/photo/2017/01/31/15/33/earth-2026101_1280.png') no-repeat center center;
+            background-size: contain;
+            opacity: 0.03;
+            z-index: 0;
+        }
+        
+        .country-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .country-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .country-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .country-image {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .country-image:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+        }
+        
+        .country-flag {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background-size: cover;
+            background-position: center;
+            z-index: 2;
+        }
+        
+        .country-info {
+            padding: 2.5rem 1.5rem 1.5rem;
+        }
+        
+        .country-info h3 {
+            margin-bottom: 0.8rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .country-info p {
+            color: #6c757d;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .local-admissions {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+        }
+        
+        .states-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .state-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .state-card:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary), var(--purple));
+            transition: all 0.3s ease;
+        }
+        
+        .state-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .state-card:hover:after {
+            height: 100%;
+            opacity: 0.1;
+        }
+        
+        .state-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 10px 20px rgba(247, 37, 133, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .state-card:hover .state-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, var(--purple) 0%, #5a189a 100%);
+        }
+        
+        .state-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .state-card p {
+            color: #6c757d;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .testimonials {
+            background-color: white;
+            position: relative;
+        }
+        
+        .testimonials:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            z-index: 0;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 5rem;
+            color: rgba(67, 97, 238, 0.1);
+            font-family: serif;
+            line-height: 1;
+            z-index: 0;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #495057;
+            position: relative;
+            z-index: 1;
+            font-size: 0.95rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            object-fit: cover;
+            border: 3px solid rgba(67, 97, 238, 0.2);
+        }
+        
+        .author-info h4 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .author-info p {
+            margin: 0.2rem 0 0;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        .rating {
+            color: var(--yellow);
+            margin-top: 0.3rem;
+            font-size: 0.9rem;
+        }
+        
+        .contact {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/connected.png');
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-info {
+            padding-right: 2rem;
+        }
+        
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .contact-details {
+            margin-bottom: 2.5rem;
+        }
+        
+        .contact-details p {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            font-size: 1.05rem;
+        }
+        
+        .contact-details i {
+            margin-right: 1.2rem;
+            color: white;
+            font-size: 1.3rem;
+            margin-top: 0.2rem;
+            min-width: 25px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255,255,255,0.15);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: rgba(255,255,255,0.25);
+            transform: translateY(-3px);
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form h3 {
+            color: var(--dark);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #495057;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+            background-color: #f8f9fa;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            outline: none;
+            border-color: var(--primary);
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            margin-top: 0.5rem;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, #212529 0%, #343a40 100%);
+            color: white;
+            padding: 5rem 1rem 2rem;
+            position: relative;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+        
+        .footer-col h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .footer-col h4:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .footer-links i {
+            margin-right: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            animation: none;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 110px;
+            right: 30px;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 20px rgba(67, 97, 238, 0.3);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: linear-gradient(135deg, var(--primary-dark), var(--info));
+            transform: translateY(-5px);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+        
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 0.8rem 0.8rem;
+            }
+            
+            .hero {
+                height: auto;
+                padding: 6rem 0;
+                background-attachment: scroll;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                padding-right: 0;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-col h4:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .stat-item {
+                width: 100%;
+                max-width: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="navbar">
+            <a href="#" class="logo">
+                <img src="marwa-logo.png" alt="Marwa Education Consultant">
+                MARWA <span>EDUCATION</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#countries">Study Abroad</a></li>
+                    <li><a href="#local">Local Admissions</a></li>
+                    <li><a href="#testimonials">Success Stories</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Your Gateway to World-Class Education</h1>
+            <p>Marwa Education Consultant helps students secure admissions in top universities worldwide and prestigious institutions across Telangana, Andhra Pradesh, Tamil Nadu, and Karnataka.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn">Free Consultation</a>
+                <a href="tel:+919876543210" class="btn btn-secondary">
+                    <i class="fas fa-phone-alt" style="margin-right: 8px;"></i> Call Now
+                </a>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">2000+</div>
+                    <div class="stat-label">Students Guided</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Visa Success</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Top Universities</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="services">
+        <div class="section-header">
+            <p class="section-subtitle">Our Services</p>
+            <h2 class="section-title">Comprehensive Education Solutions</h2>
+            <p class="section-description">We provide end-to-end support for all your educational aspirations, from selecting the right program to settling in your new academic environment.</p>
+        </div>
+        <div class="services">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+                <h3>University Selection</h3>
+                <p>Personalized university shortlisting based on your profile, budget, and career goals.</p>
+                <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h3>Application Processing</h3>
+                <p>Complete handling of all application forms and required documentation.</p>
+                <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-edit"></i>
+                      </div>
+                <h3>SOP & LOR Assistance</h3>
+                <p>Professional help with Statement of Purpose and Letter of Recommendation drafting.</p>
+                <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-passport"></i>
+                </div>
+                <h3>Visa Guidance</h3>
+                <p>Comprehensive visa application support and mock interview sessions.</p>
+                <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <h3>Scholarship Assistance</h3>
+                <p>Help in identifying and applying for scholarships and financial aid.</p>
+                <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <h3>Pre-Departure Briefing</h3>
+                <p>Orientation sessions covering accommodation, banking, and cultural adaptation.</p>
+                <a href="#" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="countries" id="countries">
+        <div class="section-header">
+            <p class="section-subtitle">Study Destinations</p>
+            <h2 class="section-title">World-Class Education Opportunities</h2>
+            <p class="section-description">We partner with top universities across the globe to provide you with the best international education options.</p>
+        </div>
+        <div class="country-grid">
+            <div class="country-card">
+                <div class="country-image" style="background-image: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80')"></div>
+                <div class="country-flag" style="background-image: url('https://flagcdn.com/w320/us.png')"></div>
+                <div class="country-info">
+                    <h3>United States</h3>
+                    <p>Home to Ivy League and top-ranked universities with cutting-edge research facilities.</p>
+                    <a href="#" class="btn btn-outline" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Explore USA</a>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <div class="country-image" style="background-image: url('https://images.unsplash.com/photo-1486299267070-83823f5448dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80')"></div>
+                <div class="country-flag" style="background-image: url('https://flagcdn.com/w320/gb.png')"></div>
+                <div class="country-info">
+                    <h3>United Kingdom</h3>
+                    <p>World-renowned institutions with rich academic heritage and global recognition.</p>
+                    <a href="#" class="btn btn-outline" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Explore UK</a>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <div class="country-image" style="background-image: url('https://images.unsplash.com/photo-1542528180-a1208c5169a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
+                <div class="country-flag" style="background-image: url('https://flagcdn.com/w320/ca.png')"></div>
+                <div class="country-info">
+                    <h3>Canada</h3>
+                    <p>High-quality education with excellent post-study work and immigration options.</p>
+                    <a href="#" class="btn btn-outline" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Explore Canada</a>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <div class="country-image" style="background-image: url('https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1530&q=80')"></div>
+                <div class="country-flag" style="background-image: url('https://flagcdn.com/w320/au.png')"></div>
+                <div class="country-info">
+                    <h3>Australia</h3>
+                    <p>Innovative education system with strong research focus and quality of life.</p>
+                    <a href="#" class="btn btn-outline" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Explore Australia</a>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <div class="country-image" style="background-image: url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')"></div>
+                <div class="country-flag" style="background-image: url('https://flagcdn.com/w320/de.png')"></div>
+                <div class="country-info">
+                    <h3>Germany</h3>
+                    <p>Tuition-free or low-cost education at world-class technical universities.</p>
+                    <a href="#" class="btn btn-outline" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Explore Germany</a>
+                </div>
+            </div>
+            
+            <div class="country-card">
+                <div class="country-image" style="background-image: url('https://images.unsplash.com/photo-1507699622108-4be3abd695ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80')"></div>
+                <div class="country-flag" style="background-image: url('https://flagcdn.com/w320/nz.png')"></div>
+                <div class="country-info">
+                    <h3>New Zealand</h3>
+                    <p>Safe, English-speaking country with excellent education and lifestyle.</p>
+                    <a href="#" class="btn btn-outline" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Explore NZ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="local-admissions" id="local">
+        <div class="section-header">
+            <p class="section-subtitle">Local Expertise</p>
+            <h2 class="section-title">Admissions in South India</h2>
+            <p class="section-description">We provide specialized guidance for admissions in premier institutions across Southern states.</p>
+        </div>
+        <div class="states-grid">
+            <div class="state-card">
+                <div class="state-icon">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <h3>Telangana</h3>
+                <p>Admissions in Osmania University, JNTU, NALSAR, IIIT Hyderabad, and other prestigious institutions.</p>
+                <a href="#" class="btn btn-outline" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Telangana Colleges</a>
+            </div>
+            
+            <div class="state-card">
+                <div class="state-icon">
+                    <i class="fas fa-university"></i>
+                </div>
+                <h3>Andhra Pradesh</h3>
+                <p>Guidance for admissions in Andhra University, SRM, VIT-AP, IIM Visakhapatnam and other top colleges.</p>
+                <a href="#" class="btn btn-outline" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">AP Colleges</a>
+            </div>
+            
+            <div class="state-card">
+                <div class="state-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Tamil Nadu</h3>
+                <p>Assistance for admissions in IIT Madras, Anna University, VIT Chennai, PSG and more.</p>
+                <a href="#" class="btn btn-outline" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">TN Colleges</a>
+            </div>
+            
+            <div class="state-card">
+                <div class="state-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h3>Karnataka</h3>
+                <p>Support for admissions in IISc, IIM Bangalore, NITK, Manipal and other premier institutions.</p>
+                <a href="#" class="btn btn-outline" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Karnataka Colleges</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials" id="testimonials">
+        <div class="section-header">
+            <p class="section-subtitle">Success Stories</p>
+            <h2 class="section-title">What Our Students Say</h2>
+            <p class="section-description">Hear from students who achieved their academic dreams with our guidance.</p>
+        </div>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Marwa's team helped me navigate the complex US university application process. I got into my dream school with a 50% scholarship! Their attention to detail and personalized approach made all the difference."
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Priya K." class="author-img">
+                    <div class="author-info">
+                        <h4>Priya K.</h4>
+                        <p>MS in Computer Science, Stanford University</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "The visa interview preparation was exceptional. I cleared my Canadian student visa in the first attempt thanks to their mock sessions. The counselor knew exactly what questions would be asked!"
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Rahul M." class="author-img">
+                    <div class="author-info">
+                        <h4>Rahul M.</h4>
+                        <p>MBA at University of Toronto</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "I got admission in NIT Warangal through their local admission services. They made the complicated process very simple for me and my family. Highly recommend for engineering admissions!"
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Arjun S." class="author-img">
+                    <div class="author-info">
+                        <h4>Arjun S.</h4>
+                        <p>B.Tech at NIT Warangal</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Their Germany admission guidance was spot on. I'm now studying at TU Munich with minimal tuition fees! They helped me with everything from university selection to blocked account setup."
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sneha R." class="author-img">
+                    <div class="author-info">
+                        <h4>Sneha R.</h4>
+                        <p>Masters in Mechanical Engineering</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "The SOP editing service transformed my application. I received offers from 3 UK universities in the Russell Group. The counselor helped me highlight my unique strengths effectively."
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Vikram P." class="author-img">
+                    <div class="author-info">
+                        <h4>Vikram P.</h4>
+                        <p>MSc in Data Science, University of Edinburgh</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Marwa's team helped my daughter secure admission in a top medical college in Andhra Pradesh. Their local expertise is unmatched. They knew all the admission criteria and deadlines."
+                </div>
+                <div class="testimonial-author">
+                    <img src="https://randomuser.me/api/portraits/women/60.jpg" alt="Mrs. Reddy" class="author-img">
+                    <div class="author-info">
+                        <h4>Mrs. Reddy</h4>
+                        <p>Parent of MBBS Student</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact" id="contact">
+        <div class="section-header" style="color: white;">
+            <p class="section-subtitle">Get In Touch</p>
+            <h2 class="section-title">Ready to Begin Your Journey?</h2>
+            <p class="section-description" style="color: rgba(255,255,255,0.8);">Contact us for a free consultation and take the first step toward your academic dreams.</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Our Offices</h3>
+                <div class="contact-details">
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Hyderabad Office:</strong> 123 Education Street, Begumpet, Hyderabad, Telangana 500016</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Vijayawada Office:</strong> 456 College Road, Governorpet, Vijayawada, Andhra Pradesh 520002</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <strong>Chennai Office:</strong> 789 Student Plaza, Nungambakkam, Chennai, Tamil Nadu 600034</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> admissions@marwaeducation.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sat: 9:30 AM - 6:30 PM</p>
+                </div>
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="https://wa.me/919876543210" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://instagram.com/marwaeducation" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/marwaeducation" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://facebook.com/marwaeducation" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://linkedin.com/company/marwaeducation" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://youtube.com/marwaeducation" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Service Interested In</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="study-abroad">Study Abroad Admissions</option>
+                            <option value="local-telangana">Local Admission - Telangana</option>
+                            <option value="local-andhra">Local Admission - Andhra Pradesh</option>
+                            <option value="local-tamilnadu">Local Admission - Tamil Nadu</option>
+                            <option value="local-karnataka">Local Admission - Karnataka</option>
+                            <option value="visa">Visa Assistance</option>
+                            <option value="sop">SOP/LOR Help</option>
+                            <option value="other">Other Query</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your educational goals" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn submit-btn">Send Message <i class="fas fa-paper-plane" style="margin-left: 8px;"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Marwa Education</h4>
+                <p style="color: #adb5bd; margin-top: 1.5rem; font-size: 0.95rem;">Your trusted partner for global and local education consulting since 2010. We help students achieve their academic dreams through expert guidance.</p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="#contact" class="btn" style="padding: 0.6rem 1.5rem; font-size: 0.9rem; display: inline-block;">Book Consultation</a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                    <li><a href="#countries"><i class="fas fa-chevron-right"></i> Study Abroad</a></li>
+                    <li><a href="#local"><i class="fas fa-chevron-right"></i> Local Admissions</a></li>
+                    <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Success Stories</a></li>
+                    <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Study Abroad</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> USA</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> UK</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Canada</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Australia</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Germany</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> New Zealand</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Local Admissions</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Telangana</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Andhra Pradesh</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Tamil Nadu</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Karnataka</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Medical Colleges</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Engineering Colleges</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 Marwa Education Consultant. All Rights Reserved. | <a href="privacy-policy.html" style="color: #adb5bd;">Privacy Policy</a> | <a href="terms.html" style="color: #adb5bd;">Terms of Service</a></p>
+            <p style="margin-top: 0.5rem;">Designed with <i class="fas fa-heart" style="color: #f72585;"></i> by Marwa Team</p>
+        </div>
+    </footer>
+    
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        
+        backToTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Form submission handling
+        const form = document.querySelector('.contact-form form');
+        if(form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Here you would typically send the form data to your server
+                alert('Thank you for your message! Our counselor will contact you within 24 hours.');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
